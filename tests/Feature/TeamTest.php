@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use App\Team;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -14,9 +15,15 @@ class TeamTest extends TestCase
         $this->assertDatabaseHas('teams', ['name' => 'Buffalo Bills']);
     }
 
-    public function testRetrieveAllTeamData()
+    public function testGuestCannotGetTeamData()
     {
-        $this->get('/teams')->assertStatus(200);
+        $this->get('/teams')->assertStatus(403);
+    }
+
+    public function testUserCanGetTeamData()
+    {
+        $this->actingAs(User::find(2))->get('/teams')
+            ->assertStatus(200);
     }
 
     public function testTeamCountIs32()

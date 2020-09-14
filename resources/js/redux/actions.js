@@ -41,41 +41,15 @@ export function fetchRanks() {
     };
 }
 
-// export function createReport(note, score, med, user) {
-//     fetch(url + 'api/reports', {
-//         method: 'POST',
-//         headers: {
-//             "Content-Type": "application/json",
-//             'Authorization': 'Bearer ' + accessToken
-//         },
-//         body: JSON.stringify({
-//             note: note,
-//             score: score,
-//             med_id: med,
-//             user_id: user
-//         })
-//     });
-// }
+export function createRank(rank, week, team) {
+    fetch(url + 'ranks', {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            rank: parseInt(rank, 10),
+            week: week,
+            team_id: team,
+        })
+    });
+}
 
-// export function editReport(report , note, score, med, user) {
-//     fetch(url + 'api/reports/' + report, {
-//         method: 'PUT',
-//         headers: {
-//             "Content-Type": "application/json",
-//             'Authorization': 'Bearer ' + accessToken
-//         },
-//         body: JSON.stringify({
-//             note: note,
-//             score: score,
-//             med_id: med,
-//             user_id: user
-//         })
-//     });
-// }
-
-// export function deleteReport(report) {
-//     fetch(url + 'api/reports/' + report, {
-//         method: 'DELETE',
-//         headers: {'Authorization': 'Bearer ' + accessToken}
-//     });
-// }

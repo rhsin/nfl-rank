@@ -22,7 +22,7 @@ class RankPolicy
 
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     public function update(User $user, Rank $rank)

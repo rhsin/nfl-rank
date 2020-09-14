@@ -14,9 +14,15 @@ class UserTest extends TestCase
         $this->assertDatabaseHas('users', ['name' => 'Ryan']);
     }
 
-    public function testRetrieveAllUserData()
+    public function testGuestCannotGetUserData()
     {
-        $this->get('/users')->assertStatus(200);
+        $this->get('/users')->assertStatus(403);
+    }
+
+    public function testUserCanGetUserData()
+    {
+        $this->actingAs(User::find(2))->get('/users')
+            ->assertStatus(200);
     }
 
     public function testGuestCannotViewDashboard()

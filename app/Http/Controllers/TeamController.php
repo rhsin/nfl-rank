@@ -10,6 +10,7 @@ class TeamController extends Controller
 {
     public function index()
     {
+        $this->authorize('viewAny', Team::class);
         return response()->json(
             TeamResource::collection(Team::all())
         );
