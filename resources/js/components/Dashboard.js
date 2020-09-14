@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './custom.css';
-import { Container, Card, Accordion, Button } from 'react-bootstrap';
+import { Container, Card, Accordion, Button, Image } from 'react-bootstrap';
 import { fetchTeams } from '../redux/actions';
 
 function Dashboard(props) {
@@ -11,21 +11,26 @@ function Dashboard(props) {
     },[]);
 
     return (
-        <Container>
+        <Container id='container'>
             {props.teams.map(item => 
-            <Accordion defaultActiveKey=''>
+            <Accordion
+                defaultActiveKey='0'
+                key={item.id} 
+                id='card'
+            >
                 <Card>
-                    <Card.Header>
+                    <Card.Header id='card-header'>
                         <Accordion.Toggle
                             as={Button}
                             variant='link'
                             eventKey='0'
                         >
-                            {item.name}
+                        {item.name}
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey='0'>
                         <Card.Body>
+                            <Image src={item.logo}></Image>
                             {item.division}
                         </Card.Body>
                     </Accordion.Collapse>

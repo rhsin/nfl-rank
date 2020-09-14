@@ -12,11 +12,12 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('division');
+            $table->string('logo')->unique();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('teams');
     }
 }

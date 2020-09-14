@@ -1,13 +1,29 @@
+
 .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    margin: 3%;
-  }
-  
- 
+  font-family: Tahoma;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#card {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  margin: 2%;
+  width: 10rem;
+  border-radius: .5rem;
+}
+
+#card-header {
+  height: 5rem;
+  text-align: center;
+}
+
+
+
+
+
