@@ -6,11 +6,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/dashboard', 'dashboard')->name('dashboard');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/dashboard', 'dashboard')->middleware('can:viewAny,App\Rank')
+    ->name('dashboard');
 
 
 Route::resource('teams', TeamController::class);
