@@ -11,4 +11,20 @@ class Team extends Model
     protected $fillable = [
         'name', 'division', 'logo',
     ];
+
+    public function ranks()
+    {
+        return $this->hasMany('App\Rank')->orderBy('week', 'desc');
+    }
+
+    public function userRanks($id)
+    {
+        $ranks = [];
+        foreach ($this->ranks as $rank) {
+            if ($rank->user_id == $id) {
+                return $rank;
+            } 
+        }
+        return $ranks;
+    }
 }

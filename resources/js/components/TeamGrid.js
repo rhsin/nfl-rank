@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './custom.css';
-import {  Card, Accordion, Button, Image, Modal, Form } from 'react-bootstrap';
-import { createRank } from '../redux/actions';
+import { Card, Accordion, Button, Image, Modal, Form } from 'react-bootstrap';
+import { createRank, fetchTeams } from '../redux/actions';
 
 function TeamGrid(props) {
     const [show, setShow] = useState(false);
     const [rank, setRank] = useState(1);
     const [team, setTeam] = useState(null);
+
+    const dispatch = useDispatch();
     const rankArray = [...Array(33).keys()].slice(1);
     const week = 2;
 
@@ -19,6 +22,7 @@ function TeamGrid(props) {
         e.preventDefault();
         createRank(rank, week, team);
         resetForm();
+        dispatch(fetchTeams());
     };
 
     const resetForm = () => {
@@ -49,6 +53,10 @@ function TeamGrid(props) {
                             <Card.Body id='card-body'>
                                 <Image src={item.logo}></Image>
                                 <div className='card-text'>{item.division}</div>
+                                <div className='card-text'>
+                                    Power Rank: {item.rank.rank != null ?
+                                    item.rank.rank : 'None'}
+                                </div>
                                 <Button
                                     variant='primary'
                                     className='mt-2'

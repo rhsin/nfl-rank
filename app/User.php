@@ -24,7 +24,7 @@ class User extends Authenticatable
 
     public function ranks()
     {
-        return $this->hasMany('App\Rank');
+        return $this->hasMany('App\Rank')->orderBy('rank');
     }
 
     public function ranksData()

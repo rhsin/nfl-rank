@@ -12,6 +12,10 @@ img {
   margin: 1%;
 }
 
+.col {
+  padding: 5px;
+} 
+
 #card-header {
   height: 5rem;
   text-align: center;
@@ -21,13 +25,25 @@ img {
   text-align: center;
 }
 
-.col {
-  padding: 5px;
-} 
-
 #accordion-card {
   margin-bottom: 10px;
   border-radius: .5rem;
+}
+
+#col-sidebar {
+  background-color: rgb(239, 240, 240);
+  border-radius: .5rem;
+}
+
+#sidebar-header {
+  margin: 15px 15px 15px 12px;
+  font-weight: bold;
+}
+
+#rank {
+  width: 200px;
+  font-size: small;
+  margin-bottom: 10px;
 }
 
 

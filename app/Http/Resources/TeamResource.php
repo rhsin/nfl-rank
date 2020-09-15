@@ -13,6 +13,7 @@ class TeamResource extends JsonResource
             'name' => $this->name,
             'division' => $this->division,
             'logo' => $this->logo,
+            'rank' => $this->userRanks($request->user()->id)
         ];
     }
 }
