@@ -20,4 +20,9 @@ class RankTest extends TestCase
             ->assertStatus(200);
     }
 
+    public function testGuestCannotGetUpvoteRank()
+    {
+        $this->get('/ranks/up/1')->assertStatus(403);
+    }
+
 }

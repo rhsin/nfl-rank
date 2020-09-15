@@ -1,10 +1,13 @@
 
 img {
   margin: 1%;
+  width: 60%;
+  height: 60%;
 }
 
 .container {
   font-family: Tahoma;
+  font-size: small;
 }
 
 .card-text {
@@ -23,6 +26,17 @@ img {
 
 .btn-group-vertical {
   padding: 0.6rem 0.27rem;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: 82%;
+  vertical-align: middle;
+}
+
+.modal {
+  top: 27%;
+  left: 27%;
 }
 
 #card-header {
@@ -45,10 +59,14 @@ img {
 }
 
 #rank {
-  width: 220px;
+  width: 240px;
   margin-bottom: 10px;
-  padding: .3em .3em .3em 0;
+  padding: .1em .1em .3em 0;
 }
+
+/* #chat-card {
+  width: 40%;
+} */
 
 
 /* #container {
