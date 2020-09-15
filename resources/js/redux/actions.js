@@ -21,7 +21,7 @@ export function fetchTeams() {
 
 export function fetchUsers() {
     return function(dispatch) {
-        fetch(url + 'users')
+        fetch(url + 'users/1')
         .then(res => res.json())
         .then(data => dispatch({
             type: FETCH_USERS,

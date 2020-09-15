@@ -21,4 +21,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function ranks()
+    {
+        return $this->hasMany('App\Rank');
+    }
+
+    public function ranksData()
+    {
+        $ranks = $this->ranks;
+        foreach ($ranks as $rank) {
+            $rank['team_id'] = Team::find($rank->team_id)->name;
+        }
+        return $ranks;
+    }
 }
