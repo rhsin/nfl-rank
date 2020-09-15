@@ -19,11 +19,6 @@ class UserPolicy
         return true;
     }
 
-    public function create(User $user)
-    {
-        //
-    }
-
     public function update(User $user, User $model)
     {
         //

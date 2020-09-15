@@ -16,6 +16,15 @@ img {
   padding: 5px;
 } 
 
+.sidebar-header {
+  margin: 10px 10px 10px 12px;
+  font-weight: bold;
+}
+
+.btn-group-vertical {
+  padding: 0.6rem 0.27rem;
+}
+
 #card-header {
   height: 5rem;
   text-align: center;
@@ -35,15 +44,10 @@ img {
   border-radius: .5rem;
 }
 
-#sidebar-header {
-  margin: 15px 15px 15px 12px;
-  font-weight: bold;
-}
-
 #rank {
-  width: 200px;
-  font-size: small;
+  width: 220px;
   margin-bottom: 10px;
+  padding: .3em .3em .3em 0;
 }
 
 

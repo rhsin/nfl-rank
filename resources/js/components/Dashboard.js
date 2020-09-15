@@ -11,6 +11,7 @@ function Dashboard(props) {
     const teamArray2 = props.teams.slice(8,16);
     const teamArray3 = props.teams.slice(16,24);
     const teamArray4 = props.teams.slice(24,32);
+    const week = 2;
 
     useEffect(()=> {
         props.dispatch(fetchTeams());
@@ -21,19 +22,19 @@ function Dashboard(props) {
         <Container id='container'>
             <Row>
                 <Col id='col-sidebar'>
-                    <Sidebar />
+                    <Sidebar week={week}/>
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray1}/>
+                    <TeamGrid teamArray={teamArray1} week={week}/>
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray2}/>
+                    <TeamGrid teamArray={teamArray2} week={week}/>
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray3}/>
+                    <TeamGrid teamArray={teamArray3} week={week}/>
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray4}/>
+                    <TeamGrid teamArray={teamArray4} week={week}/>
                 </Col>
             </Row>
         </Container> 

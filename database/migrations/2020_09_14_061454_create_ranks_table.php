@@ -16,12 +16,12 @@ class CreateRanksTable extends Migration
             $table->foreignId('user_id');
             $table->timestamps();
 
-            $table->unique(['rank', 'week', 'team_id', 'user_id']);
-
             $table->foreign('team_id')->references('id')
                 ->on('teams')->onDelete('cascade');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
+                
+            $table->unique(['rank', 'week', 'user_id']);
         });
     }
 

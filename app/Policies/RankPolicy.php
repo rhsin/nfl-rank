@@ -15,11 +15,6 @@ class RankPolicy
         return true;
     }
 
-    public function view(User $user, Rank $rank)
-    {
-        return true;
-    }
-
     public function create(User $user)
     {
         return true;
@@ -27,11 +22,11 @@ class RankPolicy
 
     public function update(User $user, Rank $rank)
     {
-        //
+        return $user->id == $rank->user_id;
     }
     
     public function delete(User $user, Rank $rank)
     {
-        //
+        return $user->id == $rank->user_id;
     }
 }

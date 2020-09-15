@@ -34,15 +34,28 @@ class RankController extends Controller
         return response()->json('Created!', 200);
     }
 
-    public function show($id)
+    public function upvote(Request $request, $id)
     {
-        //
+        $this->authorize('update', Rank::find($id));
+        $rank = Rank::find($id);
+        $rank->rank -= 1;
+        $rank->save();
+        return response()->json('Upvoted!', 200);
     }
 
-    public function update(Request $request, $id)
+    public function downvote(Request $request, $id)
     {
-        //
+        $this->authorize('update', Rank::find($id));
+        $rank = Rank::find($id);
+        $rank->rank += 1;
+        $rank->save();
+        return response()->json('Downvoted!', 200);
     }
+
+    // public function update(Request $request, $id)
+    // {
+    //     //
+    // }
 
     public function destroy($id)
     {

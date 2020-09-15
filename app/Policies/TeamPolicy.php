@@ -15,23 +15,13 @@ class TeamPolicy
         return true;
     }
 
-    public function view(User $user, Team $team)
-    {
-        return true;
-    }
+    // public function update(User $user, Team $team)
+    // {
+    //     //
+    // }
 
-    public function create(User $user)
-    {
-        //
-    }
-
-    public function update(User $user, Team $team)
-    {
-        //
-    }
-
-    public function delete(User $user, Team $team)
-    {
-        //
-    }
+    // public function delete(User $user, Team $team)
+    // {
+    //     //
+    // }
 }

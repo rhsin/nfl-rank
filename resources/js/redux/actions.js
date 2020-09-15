@@ -53,3 +53,15 @@ export function createRank(rank, week, team) {
     });
 }
 
+export function upvote(rank) {
+    fetch(url + 'ranks/up/' + rank, {
+        method: 'GET',
+    });
+}
+
+export function downvote(rank) {
+    fetch(url + 'ranks/down/' + rank, {
+        method: 'GET',
+    });
+}
+

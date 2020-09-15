@@ -19,3 +19,8 @@ Route::resource('teams', TeamController::class);
 Route::resource('users', UserController::class);
 
 Route::resource('ranks', RankController::class);
+
+
+Route::get('/ranks/up/{id}', 'RankController@upvote');
+
+Route::get('/ranks/down/{id}', 'RankController@downvote');
