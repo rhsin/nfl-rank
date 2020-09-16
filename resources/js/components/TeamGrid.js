@@ -56,7 +56,7 @@ function TeamGrid(props) {
                                 <div className='card-text'>{item.division}</div>
                                 <div className='card-text'>
                                     Power Rank: {item.rank.rank ?
-                                    item.rank.rank : 'None'}
+                                    item.rank.rank : ' -'}
                                 </div>
                                 <Button
                                     variant='primary'
@@ -68,7 +68,7 @@ function TeamGrid(props) {
                                 </Button>
                                 <div className='card-text'>
                                     Site Average: {item.avg_rank ?
-                                    item.avg_rank : 'None'}
+                                    item.avg_rank : ' -'}
                                 </div>
                             </Card.Body>
                         </Accordion.Collapse>

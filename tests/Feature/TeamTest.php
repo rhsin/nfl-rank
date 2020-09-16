@@ -15,6 +15,12 @@ class TeamTest extends TestCase
         $this->assertDatabaseHas('teams', ['name' => 'Buffalo Bills']);
     }
 
+    public function testTeamCountIs32()
+    {
+        $teams = Team::all();
+        $this->assertCount(32, $teams, 'There are not 32 teams');
+    }
+
     public function testGuestCannotGetTeamData()
     {
         $this->get('/teams')->assertStatus(403);
@@ -24,11 +30,5 @@ class TeamTest extends TestCase
     {
         $this->actingAs(User::find(2))->get('/teams')
             ->assertStatus(200);
-    }
-
-    public function testTeamCountIs32()
-    {
-        $teams = Team::all();
-        $this->assertCount(32, $teams, 'There are not 32 teams');
     }
 }

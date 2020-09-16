@@ -39,7 +39,7 @@ function RankGrid(props) {
             </Row>
             <Navbar fixed="bottom" className="justify-content-end">
                 <Button
-                    variant="outline-success"
+                    variant="success"
                     onClick={()=> showChat()}
                 >
                     Chat
