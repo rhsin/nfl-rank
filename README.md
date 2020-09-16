@@ -3,48 +3,42 @@
 <table>
 <tr>
 <td>
-  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+  A web app to create your own NFL power rankings each week, which can be shared with other users. Also included is a chat application to message other users in realtime.
 </td>
 </tr>
 </table>
 
 ## Demo
-Here is a working live demo :  https://iharsh234.github.io/WebApp/
+Here is a working live demo :  TBD
 
 ## Site
 
-### Landing Page
-Currently it is working on all NSE (India) Stocks, BSE (India) Stocks Symbol will be added soon.
+### Dashboard
+The user's dashboard displays all teams where they can submit a new rank for each team. The sidebar shows all of their power rankings, where they can move any team up or down a spot. Users can also open up the chat app through the button on the bottom-right of the screen. Messages are pushed/retrieved in realtime using Firebase RT database.
 
 ![](https://iharsh234.github.io/WebApp/images/demo/web_app_face.JPG)
 
-### Query Filled Form
+### Rankings
+Here the user can compare their rankings with the other users. This page also has access to the chat app at the bottom.
+
 ![](https://iharsh234.github.io/WebApp/images/demo/demo_query.JPG)
 
 ## Mobile support
-The WebApp is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
+The app uses a responsive grid to cater to differt devices & sizes. 
 
 ![](https://iharsh234.github.io/WebApp/images/demo/mobile.png)
 
-## [Usage](https://iharsh234.github.io/WebApp/) 
-
-### Bug / Feature Request
-
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/iharsh234/WebApp/issues/new) by including your search query and the expected result.
-
 ## Built with 
-
-- [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-- [Google Chart API](https://developers.google.com/chart/interactive/docs/quick_start) - Free , Rich Gallery , Customizable and Cross-browser compatible.
+- [Laravel]
+- [React]
 - [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
 
 ## To-do
-- Add BSE (India) Symbol to the current App.
-- Decide comparison models of Stocks. (suggestions are most welcome).
-- Another WebApp, capable of comparing at least 10 stocks.
+- Add weekly comparisons up to Playoffs
+- Connect with other sports data APIs for league updates
 
 ## Team
-
+Ryan Hsin
 ## [License]
 
 MIT © 
