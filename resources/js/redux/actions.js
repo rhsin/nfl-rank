@@ -4,8 +4,6 @@ import axios from 'axios';
 export const FETCH_TEAMS = 'FETCH_TEAMS';
 export const FETCH_USERS = 'FETCH_USERS';
 export const FETCH_USER_LIST = 'FETCH_USER_LIST';
-export const FETCH_RANKS = 'FETCH_RANKS';
-
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';
 
@@ -44,22 +42,11 @@ export function fetchUserList() {
     };
 }
 
-export function fetchRanks() {
-    return function(dispatch) {
-        fetch(url + 'ranks')
-        .then(res => res.json())
-        .then(data => dispatch({
-            type: FETCH_RANKS,
-            ranks: data
-        }));
-    };
-}
-
 export function createRank(rank, week, team) {
     axios.post(url + 'ranks', {
             rank: parseInt(rank, 10),
             week: week,
-            team_id: team,
+            team_id: team
     });
 }
 
@@ -70,4 +57,9 @@ export function upvote(rank) {
 export function downvote(rank) {
     axios.post(url + 'ranks/down/' + rank);
 }
+
+export function deleteRank(rank) {
+    axios.delete(url + 'ranks/' + rank);
+}
+
 

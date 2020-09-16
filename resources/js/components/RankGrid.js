@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './custom.css';
 import { Container, Row, Col, Navbar, Button, Modal } from 'react-bootstrap';
-import { fetchTeams, fetchUsers, fetchUserList, SHOW_MODAL, HIDE_MODAL } from '../redux/actions';
+import { fetchUsers, fetchUserList, SHOW_MODAL, HIDE_MODAL } from '../redux/actions';
 import Ranks from './Ranks';
 import Chat from './Chat';
 
@@ -16,7 +16,6 @@ function RankGrid(props) {
     const list = userList.slice(0,4);
 
     useEffect(()=> {
-        dispatch(fetchTeams());
         dispatch(fetchUsers(userId));
         dispatch(fetchUserList());
     },[]); 

@@ -30,15 +30,20 @@ class RankTest extends TestCase
         $this->get('/rankings')->assertStatus(403);
     }
 
+    public function testUserCanViewRankings()
+    {
+        $this->actingAs(User::find(2))->get('/rankings')
+            ->assertStatus(200);
+    }
+
     public function testGuestCannotCreateRank()
     {
         $this->post('/ranks')->assertStatus(403);
     }
 
-    public function testUserCanViewRankings()
+    public function testGuestCannotDeleteRank()
     {
-        $this->actingAs(User::find(2))->get('/rankings')
-            ->assertStatus(200);
+        $this->delete('/ranks/1')->assertStatus(403);
     }
 
 }

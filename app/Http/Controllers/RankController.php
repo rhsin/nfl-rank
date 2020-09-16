@@ -34,7 +34,7 @@ class RankController extends Controller
         return response()->json('Created!', 200);
     }
 
-    public function upvote(Request $request, $id)
+    public function upvote($id)
     {
         $this->authorize('update', Rank::find($id));
         $rank = Rank::find($id);
@@ -43,7 +43,7 @@ class RankController extends Controller
         return response()->json('Upvoted!', 200);
     }
 
-    public function downvote(Request $request, $id)
+    public function downvote($id)
     {
         $this->authorize('update', Rank::find($id));
         $rank = Rank::find($id);

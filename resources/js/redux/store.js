@@ -5,7 +5,6 @@ const initialState = {
     teams: [],
     users: [],
     userList: [],
-    ranks: [],
     showModal : false,
     modalType: null,
     week: 2
@@ -30,11 +29,6 @@ function reducer(state = initialState, action) {
                 ...state,
                 userList: action.userList
             };    
-        case 'FETCH_RANKS':
-            return {
-                ...state,
-                ranks: action.ranks
-            };
         case 'SHOW_MODAL':
             return {
                 ...state,

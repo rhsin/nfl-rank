@@ -27,4 +27,16 @@ class Team extends Model
         }
         return $ranks;
     }
+
+    public function averageRank()
+    {
+        $ranks = $this->ranks()->pluck('rank')->all();
+        
+        if (count($ranks) > 0) {
+            $average = array_sum($ranks)/count($ranks);
+            return round($average, 1);
+        } else {
+            return null;
+        }
+    }
 }

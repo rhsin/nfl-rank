@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './custom.css';
-import { Alert, ButtonGroup, Button } from 'react-bootstrap';
-import { upvote, downvote, fetchUsers, fetchRanks } from '../redux/actions';
+import { Alert, ButtonGroup, Button, Modal } from 'react-bootstrap';
+import { fetchUsers, upvote, downvote, deleteRank } from '../redux/actions';
 
 function Sidebar(props) {
     const { dispatch, users, userId, week } = props;
 
+    const [show, setShow] = useState(false);
+    const [rank, setRank] = useState(null);
+
     const upRank = (rank) => {
         upvote(rank);
-        dispatch(fetchRanks());
         dispatch(fetchUsers(userId));
     };
 
     const downRank = (rank) => {
         downvote(rank);
-        dispatch(fetchRanks());
         dispatch(fetchUsers(userId));
+    };
+
+    const selectRank = (id) => {
+        setShow(true);
+        setRank(id)
+    };
+
+    const removeRank = () => {
+        deleteRank(rank);
+        resetForm();
+    }
+
+    const resetForm = () => {
+        setShow(false);
+        setRank(null);
     };
 
     return (
@@ -24,7 +40,7 @@ function Sidebar(props) {
             <div className='sidebar-header'>
                 {users.email}
             </div>
-            <div className='sidebar-header'>
+            <div className='col-header'>
                 Week {week}
             </div>
             {users.ranks != null && users.ranks.map(item => 
@@ -47,9 +63,31 @@ function Sidebar(props) {
                             -
                         </Button>
                     </ButtonGroup>
-                    {item.rank}. {item.team_id}
+                    <Button
+                        variant='outline-dark'
+                        size='sm'
+                        id='btn-rank'
+                        onClick={()=> selectRank(item.id)}
+                    >
+                        {item.rank}. {item.team_id}
+                    </Button>
                 </Alert>    
             )}
+            <Modal show={show} onHide={()=> resetForm()}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Delete Rank</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Button variant='danger' onClick={()=> removeRank()}>
+                        Delete 
+                    </Button>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant='dark' onClick={()=> resetForm()}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     );
 }

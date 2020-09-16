@@ -1,8 +1,8 @@
 
 img {
-  margin: 1%;
-  width: 60%;
-  height: 60%;
+  margin-bottom: .7rem;
+  width: 50%;
+  height: 50%;
 }
 
 .container {
@@ -12,7 +12,7 @@ img {
 
 .card-text {
   font-weight: bold;
-  margin: 1%;
+  margin: .15rem;
 }
 
 .col {
@@ -20,13 +20,15 @@ img {
 } 
 
 .sidebar-header {
-  margin: .6em .6em .7em .8em;
+  margin: .6rem .6rem .7rem .8rem;
   font-weight: bold;
-  text-transform: capitalize
+  text-transform: uppercase
 }
 
-.btn-group-vertical {
-  padding: 0.6rem 0.27rem;
+.col-header {
+  margin: .6rem .6rem .7rem .8rem;
+  font-weight: bold;
+  text-transform: capitalize
 }
 
 .form-inline .form-control {
@@ -44,12 +46,14 @@ img {
 }
 
 #card-header {
-  height: 5rem;
+  height: 4.3rem;
   text-align: center;
+  padding: .5rem;
 }
 
 #card-body {
   text-align: center;
+  padding: 1rem;
 }
 
 #accordion-card {
@@ -65,7 +69,7 @@ img {
 #rank {
   width: 240px;
   margin-bottom: 10px;
-  padding: .1em .1em .3em 0;
+  padding: .1rem .1rem .3rem 0;
 }
 
 #col-rankings {
@@ -78,7 +82,12 @@ img {
 #rank-col {
   width: 220px;
   margin-bottom: 10px;
-  padding: .35em;
+  padding: .35rem;
+}
+
+#btn-rank {
+  border-width: 0;
+  font-weight: 500;
 }
 
 

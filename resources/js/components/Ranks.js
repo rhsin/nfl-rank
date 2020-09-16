@@ -11,10 +11,10 @@ function RankColumn(props) {
 
     return (
         <>
-            <div className='sidebar-header'>
+            <div className='col-header'>
                 {userCol.name}
             </div>
-            <div className='sidebar-header'>
+            <div className='col-header'>
                 Week {week}
             </div>
             {userCol.ranks != null && userCol.ranks.map(item => 

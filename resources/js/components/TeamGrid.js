@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './custom.css';
 import { Card, Accordion, Button, Image, Modal, Form } from 'react-bootstrap';
-import { createRank, fetchTeams, fetchUsers } from '../redux/actions';
+import { createRank, fetchTeams } from '../redux/actions';
 
 function TeamGrid(props) {
     const [show, setShow] = useState(false);
@@ -24,7 +24,6 @@ function TeamGrid(props) {
         createRank(rank, week, team);
         resetForm();
         dispatch(fetchTeams());
-        dispatch(fetchUsers());
     };
 
     const resetForm = () => {
@@ -56,17 +55,21 @@ function TeamGrid(props) {
                                 <Image src={item.logo}></Image>
                                 <div className='card-text'>{item.division}</div>
                                 <div className='card-text'>
-                                    Power Rank: {item.rank.rank != null ?
+                                    Power Rank: {item.rank.rank ?
                                     item.rank.rank : 'None'}
                                 </div>
                                 <Button
                                     variant='primary'
-                                    className='mt-2'
+                                    className='m-1'
                                     size='sm'
                                     onClick={()=> selectTeam(item.id)}
                                 >
                                     Add Weekly Rank
                                 </Button>
+                                <div className='card-text'>
+                                    Site Average: {item.avg_rank ?
+                                    item.avg_rank : 'None'}
+                                </div>
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
