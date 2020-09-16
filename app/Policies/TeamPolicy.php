@@ -14,14 +14,4 @@ class TeamPolicy
     {
         return true;
     }
-
-    // public function update(User $user, Team $team)
-    // {
-    //     //
-    // }
-
-    // public function delete(User $user, Team $team)
-    // {
-    //     //
-    // }
 }

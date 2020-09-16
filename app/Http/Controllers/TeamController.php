@@ -15,14 +15,4 @@ class TeamController extends Controller
             TeamResource::collection(Team::all())
         );
     }
-
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
-
-    // public function destroy($id)
-    // {
-    //     //
-    // }
 }

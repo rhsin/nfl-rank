@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Request;
@@ -25,13 +24,27 @@ class UserController extends Controller
         );
     }
 
-    public function update(Request $request, $id)
+    public function edit(User $user)
     {
-        //
+        $this->authorize('update', $user);
+        return view('users.edit', ['user' => $user]);
     }
 
-    public function destroy($id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->authorize('update', $user);
+        $validatedData = $request->validate([
+            'name' => ['required', 'between:1,15'],
+            'email' => ['required', 'email']
+        ]);
+        $user->update($validatedData);
+        return redirect(route('dashboard'));
+    }
+
+    public function delete(User $user)
+    {
+        $this->authorize('delete', $user);
+        $user->delete();
+        return redirect(route('rankings'));
     }
 }

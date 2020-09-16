@@ -54,6 +54,8 @@ class RankController extends Controller
 
     public function destroy($id)
     {
-        //
+        $this->authorize('delete', Rank::find($id));
+        Rank::find($id)->delete();
+        return response()->json('Deleted!', 200);
     }
 }

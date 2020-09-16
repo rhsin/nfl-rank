@@ -27,3 +27,6 @@ Route::resource('ranks', RankController::class);
 Route::post('/ranks/up/{id}', 'RankController@upvote');
 
 Route::post('/ranks/down/{id}', 'RankController@downvote');
+
+Route::delete('users/delete/{user}', 'UserController@delete')
+    ->middleware('password.confirm')->name('users.delete');

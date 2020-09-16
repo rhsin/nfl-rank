@@ -11,7 +11,7 @@ class UserTest extends TestCase
 {
     public function testCheckUserTableDatabase()
     {
-        $this->assertDatabaseHas('users', ['name' => 'Ryan']);
+        $this->assertDatabaseHas('users', ['email' => 'ryanhsin.sb@gmail.com']);
     }
 
     public function testGuestCannotGetUserData()
@@ -39,6 +39,17 @@ class UserTest extends TestCase
     public function testUserCanViewDashboard()
     {
         $this->actingAs(User::find(2))->get('/dashboard')
+            ->assertStatus(200);
+    }
+
+    public function testGuestCannotEditProfile()
+    {
+        $this->get('/users/2/edit')->assertStatus(403);
+    }
+
+    public function testUserCanEditProfile()
+    {
+        $this->actingAs(User::find(2))->get('/users/2/edit')
             ->assertStatus(200);
     }
 }

@@ -5,14 +5,14 @@ import { Alert } from 'react-bootstrap';
 
 function RankColumn(props) {
     const { users, week, userCol } = props;
-    
+
     const variant = users.id == userCol.id ?
         'success' : 'danger';
 
     return (
         <>
             <div className='sidebar-header'>
-                {userCol.email}
+                {userCol.name}
             </div>
             <div className='sidebar-header'>
                 Week {week}
