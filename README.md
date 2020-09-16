@@ -1,5 +1,5 @@
-# ![WebApp](https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG)
-# WebApp
+# ![NFL-Rank](https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG)
+# NFL-Rank
 <table>
 <tr>
 <td>
@@ -11,6 +11,7 @@
 ## Demo
 Here is a working live demo :  TBD
 
+
 ## Site
 
 ### Dashboard
@@ -18,27 +19,30 @@ The user's dashboard displays all teams where they can submit a new rank for eac
 
 ![](https://iharsh234.github.io/WebApp/images/demo/web_app_face.JPG)
 
+
 ### Rankings
 Here the user can compare their rankings with the other users. This page also has access to the chat app at the bottom.
 
 ![](https://iharsh234.github.io/WebApp/images/demo/demo_query.JPG)
+
 
 ## Mobile support
 The app uses a responsive grid to cater to differt devices & sizes. 
 
 ![](https://iharsh234.github.io/WebApp/images/demo/mobile.png)
 
+
 ## Built with 
-- [Laravel]
+- [Laravel](https://laravel.com/) - Framework 
 - [React]
 - [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
+
 
 ## To-do
 - Add weekly comparisons up to Playoffs
 - Connect with other sports data APIs for league updates
 
-## Team
-Ryan Hsin
-## [License]
 
-MIT © 
+## Contact
+Created by Ryan Hsin - please feel free to contact me!
+
