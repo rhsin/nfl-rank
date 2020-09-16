@@ -33,9 +33,12 @@ The app uses a responsive grid to cater to differt devices & sizes.
 
 
 ## Built with 
-- [Laravel](https://laravel.com/) - Framework 
-- [React]
-- [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
+- [Laravel](https://laravel.com/) v7.24
+- [React](https://reactjs.org/) v16.2.0
+- [Redux](https://redux.js.org/) v4.0.5
+- [MySQL](https://www.mysql.com/) v5.7.24
+- [Firebase](https://firebase.google.com/) v7.20.0
+- [Bootstrap](http://getbootstrap.com/) v4.0.0
 
 
 ## To-do
