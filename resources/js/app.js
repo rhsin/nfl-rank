@@ -13,3 +13,5 @@ require('./bootstrap');
  */
 
 require('./Index');
+
+require('./Rankings');

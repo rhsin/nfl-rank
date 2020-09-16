@@ -4,9 +4,11 @@ import thunk from 'redux-thunk';
 const initialState = {
     teams: [],
     users: [],
+    userList: [],
     ranks: [],
     showModal : false,
-    modalType: ''
+    modalType: null,
+    week: 2
 };
 
 function reducer(state = initialState, action) {
@@ -23,6 +25,11 @@ function reducer(state = initialState, action) {
                 ...state,
                 users: action.users
             };
+        case 'FETCH_USER_LIST':
+            return {
+                ...state,
+                userList: action.userList
+            };    
         case 'FETCH_RANKS':
             return {
                 ...state,

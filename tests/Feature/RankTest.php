@@ -20,9 +20,25 @@ class RankTest extends TestCase
             ->assertStatus(200);
     }
 
-    public function testGuestCannotGetUpvoteRank()
+    public function testGuestCannotUpvoteRank()
     {
-        $this->get('/ranks/up/1')->assertStatus(403);
+        $this->post('/ranks/up/1')->assertStatus(403);
+    }
+
+    public function testGuestCannotViewRankings()
+    {
+        $this->get('/rankings')->assertStatus(403);
+    }
+
+    public function testGuestCannotCreateRank()
+    {
+        $this->post('/ranks')->assertStatus(403);
+    }
+
+    public function testUserCanViewRankings()
+    {
+        $this->actingAs(User::find(2))->get('/rankings')
+            ->assertStatus(200);
     }
 
 }

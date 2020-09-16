@@ -20,8 +20,9 @@ img {
 } 
 
 .sidebar-header {
-  margin: 10px 10px 10px 12px;
+  margin: .6em .6em .7em .8em;
   font-weight: bold;
+  text-transform: capitalize
 }
 
 .btn-group-vertical {
@@ -30,13 +31,16 @@ img {
 
 .form-inline .form-control {
   display: inline-block;
-  width: 82%;
+  width: 80%;
   vertical-align: middle;
 }
 
-.modal {
-  top: 27%;
-  left: 27%;
+#chat-modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+  width: 26rem;
 }
 
 #card-header {
@@ -64,9 +68,18 @@ img {
   padding: .1em .1em .3em 0;
 }
 
-/* #chat-card {
-  width: 40%;
-} */
+#col-rankings {
+  background-color: rgb(235, 245, 253);
+  border-radius: .5rem;
+  font-size: 11pt;
+  margin-right: .7rem;
+}
+
+#rank-col {
+  width: 220px;
+  margin-bottom: 10px;
+  padding: .35em;
+}
 
 
 /* #container {

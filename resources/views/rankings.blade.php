@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div id="root" data-user-id={{ Auth::user()->id ?? null }}></div>
+        <div id="rankings" data-user-id={{ Auth::user()->id ?? null }}></div>
     </div>
 </div>
 @endsection

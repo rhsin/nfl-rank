@@ -52,11 +52,6 @@ class RankController extends Controller
         return response()->json('Downvoted!', 200);
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
-
     public function destroy($id)
     {
         //

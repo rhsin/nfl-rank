@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $this->authorize('viewAny', User::class);
         return response()->json(
-            new UserResource(Auth::user())
+            new UserResource(User::find($id))
         );
     }
 

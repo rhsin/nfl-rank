@@ -25,6 +25,12 @@ class UserTest extends TestCase
             ->assertStatus(200);
     }
 
+    public function testUserCanGetSingleUserData()
+    {
+        $this->actingAs(User::find(2))->get('/users/1')
+            ->assertStatus(200);
+    }
+
     public function testGuestCannotViewDashboard()
     {
         $this->get('/dashboard')->assertStatus(403);

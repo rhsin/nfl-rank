@@ -1,6 +1,9 @@
 
+import axios from 'axios';
+
 export const FETCH_TEAMS = 'FETCH_TEAMS';
 export const FETCH_USERS = 'FETCH_USERS';
+export const FETCH_USER_LIST = 'FETCH_USER_LIST';
 export const FETCH_RANKS = 'FETCH_RANKS';
 
 export const SHOW_MODAL = 'SHOW_MODAL';
@@ -19,13 +22,24 @@ export function fetchTeams() {
     };
 }
 
-export function fetchUsers() {
+export function fetchUsers(id) {
     return function(dispatch) {
-        fetch(url + 'users/1')
+        fetch(url + 'users/' + id)
         .then(res => res.json())
         .then(data => dispatch({
             type: FETCH_USERS,
             users: data
+        }));
+    };
+}
+
+export function fetchUserList() {
+    return function(dispatch) {
+        fetch(url + 'users')
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: FETCH_USER_LIST,
+            userList: data
         }));
     };
 }
@@ -42,26 +56,18 @@ export function fetchRanks() {
 }
 
 export function createRank(rank, week, team) {
-    fetch(url + 'ranks', {
-        method: 'POST',
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
+    axios.post(url + 'ranks', {
             rank: parseInt(rank, 10),
             week: week,
             team_id: team,
-        })
     });
 }
 
 export function upvote(rank) {
-    fetch(url + 'ranks/up/' + rank, {
-        method: 'GET',
-    });
+    axios.post(url + 'ranks/up/' + rank);
 }
 
 export function downvote(rank) {
-    fetch(url + 'ranks/down/' + rank, {
-        method: 'GET',
-    });
+    axios.post(url + 'ranks/down/' + rank);
 }
 

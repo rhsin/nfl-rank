@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './custom.css';
 import { Card, Accordion, Button, Image, Modal, Form } from 'react-bootstrap';
 import { createRank, fetchTeams, fetchUsers } from '../redux/actions';
@@ -9,7 +9,9 @@ function TeamGrid(props) {
     const [rank, setRank] = useState(1);
     const [team, setTeam] = useState(null);
 
+    const week = useSelector(state => state.week);
     const dispatch = useDispatch();
+
     const rankArray = [...Array(33).keys()].slice(1);
 
     const selectTeam = (id) => {
@@ -19,7 +21,7 @@ function TeamGrid(props) {
 
     const submitForm = (e) => {
         e.preventDefault();
-        createRank(rank, props.week, team);
+        createRank(rank, week, team);
         resetForm();
         dispatch(fetchTeams());
         dispatch(fetchUsers());

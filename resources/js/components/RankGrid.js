@@ -2,28 +2,25 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './custom.css';
 import { Container, Row, Col, Navbar, Button, Modal } from 'react-bootstrap';
-import { fetchTeams, fetchUsers, SHOW_MODAL, HIDE_MODAL } from '../redux/actions';
-import TeamGrid from './TeamGrid';
-import Sidebar from './Sidebar';
+import { fetchTeams, fetchUsers, fetchUserList, SHOW_MODAL, HIDE_MODAL } from '../redux/actions';
+import Ranks from './Ranks';
 import Chat from './Chat';
 
-function Dashboard(props) {
-    const { dispatch, showModal, teams, users } = props;
+function RankGrid(props) {
+    const { dispatch, showModal, users, userList, week } = props;
 
-    const userId = document.getElementById('root').getAttribute('data-user-id');
+    const userId = document.getElementById('rankings').getAttribute('data-user-id');
     const user = users.name != null ?
         users.name : 'Guest';
-
-    const teamArray1 = teams.slice(0,8);
-    const teamArray2 = teams.slice(8,16);
-    const teamArray3 = teams.slice(16,24);
-    const teamArray4 = teams.slice(24,32);
+    
+    const list = userList.slice(0,4);
 
     useEffect(()=> {
         dispatch(fetchTeams());
         dispatch(fetchUsers(userId));
-    },[]);
-
+        dispatch(fetchUserList());
+    },[]); 
+        
     const showChat = () => {
         dispatch({type: SHOW_MODAL});
     };
@@ -35,21 +32,11 @@ function Dashboard(props) {
     return (
         <Container id='container'>
             <Row>
-                <Col id='col-sidebar'>
-                    <Sidebar userId={userId}/>
-                </Col>
-                <Col>
-                    <TeamGrid teamArray={teamArray1} />
-                </Col>
-                <Col>
-                    <TeamGrid teamArray={teamArray2} />
-                </Col>
-                <Col>
-                    <TeamGrid teamArray={teamArray3} />
-                </Col>
-                <Col>
-                    <TeamGrid teamArray={teamArray4} />
-                </Col>
+                {list.map(item => 
+                    <Col id='col-rankings' key={item.id}>
+                        <Ranks userCol={item}/>
+                    </Col>
+                )}
             </Row>
             <Navbar fixed="bottom" className="justify-content-end">
                 <Button
@@ -72,12 +59,13 @@ function Dashboard(props) {
 
 function mapStateToProps(state) {
     return {
-        teams: state.teams,
         users: state.users,
-        showModal: state.showModal
+        userList: state.userList,
+        showModal: state.showModal,
+        week: state.week
     };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(RankGrid);
 
 
