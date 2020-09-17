@@ -1,3 +1,5 @@
+// Modal state is currently for global chat app, with option to manage future modals with modalType 
+
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 

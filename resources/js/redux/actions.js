@@ -1,4 +1,4 @@
-
+// Only added axios because Laravel came with axios CSRF support 
 import axios from 'axios';
 
 export const FETCH_TEAMS = 'FETCH_TEAMS';

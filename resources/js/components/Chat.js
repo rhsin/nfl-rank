@@ -10,6 +10,7 @@ function Chat(props) {
     const date = new Date(Date.now()).toUTCString();
     const user = props.user;
 
+    // Retrieve messages from Firebase RT database and set as state (log)
     useEffect(()=> {
         database.ref('log').on('value', snapshot => {
             const log = [];
@@ -20,6 +21,7 @@ function Chat(props) {
         });
     },[]);
 
+    // Add messages to Firebase RT database
     const handleSubmit = (e) => {
         e.preventDefault();
         if (message.length > 0) {

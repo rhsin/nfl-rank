@@ -12,6 +12,7 @@ function TeamGrid(props) {
     const week = useSelector(state => state.week);
     const dispatch = useDispatch();
 
+    // Array from 1 to 32 (32 teams in NFL league), for dropdown form
     const rankArray = [...Array(33).keys()].slice(1);
 
     const selectTeam = (id) => {
@@ -64,7 +65,7 @@ function TeamGrid(props) {
                                     size='sm'
                                     onClick={()=> selectTeam(item.id)}
                                 >
-                                    Add Weekly Rank
+                                    Add Ranking
                                 </Button>
                                 <div className='card-text'>
                                     Site Average: {item.avg_rank ?

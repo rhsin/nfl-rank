@@ -6,6 +6,7 @@ import { Alert } from 'react-bootstrap';
 function RankColumn(props) {
     const { users, week, userCol } = props;
 
+    // Authenticated user ranking column set green, other users set red
     const variant = users.id == userCol.id ?
         'success' : 'danger';
 
@@ -14,7 +15,7 @@ function RankColumn(props) {
             <div className='col-header'>
                 {userCol.name}
             </div>
-            <div className='col-header'>
+            <div className='col-text'>
                 Week {week}
             </div>
             {userCol.ranks != null && userCol.ranks.map(item => 

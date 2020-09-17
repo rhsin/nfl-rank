@@ -27,6 +27,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Rank')->orderBy('rank');
     }
 
+    // Replaces team-id with their name in the ranks collection
     public function ranksData()
     {
         $ranks = $this->ranks;

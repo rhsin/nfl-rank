@@ -10,10 +10,12 @@ import Chat from './Chat';
 function Dashboard(props) {
     const { dispatch, showModal, teams, users } = props;
 
+    // Authenticated user-id is passed as html tag attribute in laravel view template
     const userId = document.getElementById('root').getAttribute('data-user-id');
     const user = users.name != null ?
         users.name : 'Guest';
 
+    // The 32 NFL teams are split into 4 columns of each with an 8 team array (teamArray)
     const teamArray1 = teams.slice(0,8);
     const teamArray2 = teams.slice(8,16);
     const teamArray3 = teams.slice(16,24);
@@ -34,6 +36,9 @@ function Dashboard(props) {
 
     return (
         <Container id='container'>
+            <Row className='page-header'>
+                Dashboard
+            </Row>
             <Row>
                 <Col id='col-sidebar'>
                     <Sidebar userId={userId}/>
