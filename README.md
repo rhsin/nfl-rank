@@ -7,8 +7,8 @@
 </tr>
 </table>
 
-## Demo
-Here is a working live demo :  (https://nfl-rank-laravel-react.herokuapp.com/)
+<!-- ## Demo
+Here is a working live demo :  (https://nfl-rank-laravel-react.herokuapp.com/) -->
 
 
 ## Site

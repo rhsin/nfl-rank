@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './custom.css';
 import { Alert, ButtonGroup, Button, Modal } from 'react-bootstrap';
-import { fetchUsers, upvote, downvote, deleteRank } from '../redux/actions';
+import { upvote, downvote, deleteRank } from '../redux/actions';
 
 function Sidebar(props) {
-    const { dispatch, users, userId, week } = props;
+    const { users, week, refresh } = props;
 
     const [show, setShow] = useState(false);
     const [rank, setRank] = useState(null);
 
     const upRank = (rank) => {
         upvote(rank);
-        dispatch(fetchUsers(userId));
+        refresh();
     };
 
     const downRank = (rank) => {
         downvote(rank);
-        dispatch(fetchUsers(userId));
+        refresh();
     };
 
     const selectRank = (id) => {
@@ -31,6 +31,7 @@ function Sidebar(props) {
     }
 
     const resetForm = () => {
+        refresh();
         setShow(false);
         setRank(null);
     };

@@ -7,7 +7,7 @@ export const FETCH_USER_LIST = 'FETCH_USER_LIST';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';
 
-const url = 'https://nfl-rank-laravel-react.herokuapp.com/';
+const url = 'http://nfl.test/';
 
 export function fetchTeams() {
     return function(dispatch) {

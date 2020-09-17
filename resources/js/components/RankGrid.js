@@ -7,7 +7,7 @@ import Ranks from './Ranks';
 import Chat from './Chat';
 
 function RankGrid(props) {
-    const { dispatch, showModal, users, userList, week } = props;
+    const { dispatch, showModal, users, userList } = props;
 
     // Authenticated user-id is passed as html tag attribute in laravel view template
     const userId = document.getElementById('rankings').getAttribute('data-user-id');
@@ -37,7 +37,7 @@ function RankGrid(props) {
             <Row>
                 {list.map(item => 
                     <Col id='col-rankings' key={item.id}>
-                        <Ranks userCol={item}/>
+                        <Ranks userCol={item} />
                     </Col>
                 )}
             </Row>
@@ -54,7 +54,7 @@ function RankGrid(props) {
                 id='chat-modal'
                 onHide={()=> hideChat()}
             >
-                <Chat user={user}/>
+                <Chat user={user} />
             </Modal>
         </Container> 
     );

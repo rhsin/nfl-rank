@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './custom.css';
 import { Container, Row, Col, Navbar, Button, Modal } from 'react-bootstrap';
@@ -9,6 +9,8 @@ import Chat from './Chat';
 
 function Dashboard(props) {
     const { dispatch, showModal, teams, users } = props;
+
+    const [refresh, setRefresh] = useState(false);
 
     // Authenticated user-id is passed as html tag attribute in laravel view template
     const userId = document.getElementById('root').getAttribute('data-user-id');
@@ -24,7 +26,7 @@ function Dashboard(props) {
     useEffect(()=> {
         dispatch(fetchTeams());
         dispatch(fetchUsers(userId));
-    },[]);
+    },[refresh]);
 
     const showChat = () => {
         dispatch({type: SHOW_MODAL});
@@ -41,19 +43,31 @@ function Dashboard(props) {
             </Row>
             <Row>
                 <Col id='col-sidebar'>
-                    <Sidebar userId={userId}/>
+                    <Sidebar refresh={()=> setRefresh(!refresh)} />
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray1} />
+                    <TeamGrid
+                        teamArray={teamArray1}
+                        refresh={()=> setRefresh(!refresh)}
+                    />
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray2} />
+                    <TeamGrid
+                        teamArray={teamArray2}
+                        refresh={()=> setRefresh(!refresh)}
+                    />
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray3} />
+                    <TeamGrid
+                        teamArray={teamArray3}
+                        refresh={()=> setRefresh(!refresh)}
+                    />
                 </Col>
                 <Col>
-                    <TeamGrid teamArray={teamArray4} />
+                    <TeamGrid
+                        teamArray={teamArray4}
+                        refresh={()=> setRefresh(!refresh)}
+                    />
                 </Col>
             </Row>
             <Navbar fixed="bottom" className="justify-content-end">
@@ -69,7 +83,7 @@ function Dashboard(props) {
                 id='chat-modal'
                 onHide={()=> hideChat()}
             >
-                <Chat user={user}/>
+                <Chat user={user} />
             </Modal>
         </Container> 
     );

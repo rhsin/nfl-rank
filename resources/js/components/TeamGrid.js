@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './custom.css';
 import { Card, Accordion, Button, Image, Modal, Form } from 'react-bootstrap';
-import { createRank, fetchTeams } from '../redux/actions';
+import { createRank } from '../redux/actions';
 
 function TeamGrid(props) {
+    const { teamArray, refresh } = props;
+
     const [show, setShow] = useState(false);
     const [rank, setRank] = useState(1);
     const [team, setTeam] = useState(null);
 
     const week = useSelector(state => state.week);
-    const dispatch = useDispatch();
 
     // Array from 1 to 32 (32 teams in NFL league), for dropdown form
     const rankArray = [...Array(33).keys()].slice(1);
 
     const selectTeam = (id) => {
         setShow(true);
-        setTeam(id)
+        setTeam(id);
     };
 
     const submitForm = (e) => {
         e.preventDefault();
         createRank(rank, week, team);
         resetForm();
-        dispatch(fetchTeams());
     };
 
     const resetForm = () => {
+        refresh();
         setShow(false);
         setRank(null);
         setTeam(1);
@@ -35,7 +36,7 @@ function TeamGrid(props) {
 
     return (
         <>
-            {props.teamArray.map(item => 
+            {teamArray.map(item => 
                 <Accordion
                     defaultActiveKey='0'
                     key={item.id} 
