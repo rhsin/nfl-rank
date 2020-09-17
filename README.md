@@ -16,17 +16,17 @@ Here is a working live demo :  (https://nfl-rank-laravel-react.herokuapp.com/)
 ### Dashboard
 The user's dashboard displays all teams where they can submit a new rank for each team. The sidebar shows all of their power rankings, where they can move any team up or down a spot. 
 
-![](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Dashboard.png?token=AHGHGSPVKJJF3DMWDV2LXMC7MK4KA)
+![](/public/Dashboard.png?raw=true)
 
 
 Users can also open up the chat app through the button on the bottom-right of the screen. Messages are pushed/retrieved in realtime using Firebase RT database.
 
-![](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Chat.png?token=AHGHGSO2BNZMO254OVM2T527MK4Q2)
+![](/public/Chat.png?raw=true)
 
 ### Rankings
 Here the user can compare their rankings with the other users. This page also has access to the chat app at the bottom.
 
-![](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Rankings.png?token=AHGHGSM2RNZCZ75N62VW5XK7MK4M2)
+![](public/Rankings.png?raw=true)
 
 
 ## Mobile support
