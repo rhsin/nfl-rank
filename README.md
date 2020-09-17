@@ -1,4 +1,3 @@
-# ![NFL-Rank](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Dashboard.png?token=AHGHGSPVKJJF3DMWDV2LXMC7MK4KA)
 # NFL-Rank
 <table>
 <tr>
