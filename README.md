@@ -1,4 +1,4 @@
-# ![NFL-Rank]()
+# ![NFL-Rank](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Dashboard.png?token=AHGHGSPVKJJF3DMWDV2LXMC7MK4KA)
 # NFL-Rank
 <table>
 <tr>
@@ -15,15 +15,19 @@ Here is a working live demo :  TBD
 ## Site
 
 ### Dashboard
-The user's dashboard displays all teams where they can submit a new rank for each team. The sidebar shows all of their power rankings, where they can move any team up or down a spot. Users can also open up the chat app through the button on the bottom-right of the screen. Messages are pushed/retrieved in realtime using Firebase RT database.
+The user's dashboard displays all teams where they can submit a new rank for each team. The sidebar shows all of their power rankings, where they can move any team up or down a spot. 
 
-![]()
+![](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Dashboard.png?token=AHGHGSPVKJJF3DMWDV2LXMC7MK4KA)
 
+
+Users can also open up the chat app through the button on the bottom-right of the screen. Messages are pushed/retrieved in realtime using Firebase RT database.
+
+![](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Chat.png?token=AHGHGSO2BNZMO254OVM2T527MK4Q2)
 
 ### Rankings
 Here the user can compare their rankings with the other users. This page also has access to the chat app at the bottom.
 
-![]()
+![](https://raw.githubusercontent.com/rhsin/nfl-rank/master/public/Rankings.png?token=AHGHGSM2RNZCZ75N62VW5XK7MK4M2)
 
 
 ## Mobile support
