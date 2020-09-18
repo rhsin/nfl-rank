@@ -7,7 +7,9 @@ export const FETCH_USER_LIST = 'FETCH_USER_LIST';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';
 
-const url = 'http://nfl.test/';
+// const url = 'http://nfl.test/';
+
+const url = 'nfl-rank.chsxtvbmmuc2.us-west-2.rds.amazonaws.com/';
 
 export function fetchTeams() {
     return function(dispatch) {
