@@ -9,7 +9,7 @@ export const HIDE_MODAL = 'HIDE_MODAL';
 
 // const url = 'http://nfl.test/';
 
-const url = 'nfl-rank.chsxtvbmmuc2.us-west-2.rds.amazonaws.com/';
+const url = 'http://eblaravel-env.eba-qsnkmu83.us-west-2.elasticbeanstalk.com/';
 
 export function fetchTeams() {
     return function(dispatch) {
