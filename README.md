@@ -2,13 +2,10 @@
 <table>
 <tr>
 <td>
-  A web app to create your own NFL power rankings each week, which can be shared with other users. Also included is a chat application to message other users in realtime.
+  A web app to create your own NFL power rankings each week, which can be shared with other users. Also included is a chat application to message other users in realtime. App is currently deployed through Amazon Web Services.
 </td>
 </tr>
 </table>
-
-<!-- ## Demo
-Here is a working live demo :  (https://nfl-rank-laravel-react.herokuapp.com/) -->
 
 
 ## Site
@@ -29,6 +26,10 @@ Here the user can compare their rankings with the other users. This page also ha
 ![](public/Rankings.png?raw=true)
 
 
+## Demo
+Here is a working live demo on AWS :  (http://eblaravel-env.eba-qsnkmu83.us-west-2.elasticbeanstalk.com/)
+
+
 ## Mobile support
 The app uses a responsive grid to cater to differt devices & sizes. 
 
@@ -38,6 +39,7 @@ The app uses a responsive grid to cater to differt devices & sizes.
 - [React](https://reactjs.org/) v16.2.0
 - [Redux](https://redux.js.org/) v4.0.5
 - [MySQL](https://www.mysql.com/) v5.7.24
+- [AWS Elastic Beanstalk] (https://aws.amazon.com/elasticbeanstalk/)
 - [Firebase](https://firebase.google.com/) v7.20.0
 - [Bootstrap](http://getbootstrap.com/) v4.0.0
 
