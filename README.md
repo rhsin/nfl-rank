@@ -31,7 +31,7 @@ Here is a working live demo on AWS :  (http://eblaravel-env.eba-qsnkmu83.us-west
 
 
 ## Mobile support
-The app uses a responsive grid to cater to differt devices & sizes. 
+The app uses a responsive grid to cater to different devices & sizes. 
 
 
 ## Built with 
